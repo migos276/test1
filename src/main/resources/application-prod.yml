@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/buffetdb}
+    username: ${DATABASE_USERNAME:buffet_user}
+    password: ${DATABASE_PASSWORD:buffet_password}
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+  
+  h2:
+    console:
+      enabled: false
+
+logging:
+  level:
+    com.buffet: INFO
+    org.springframework.security: WARN
+    org.hibernate.SQL: WARN
